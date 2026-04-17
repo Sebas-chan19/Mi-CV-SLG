@@ -1,67 +1,159 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Sebastian Lopez Garcia - CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Lopez Garcia | Portfolio</title>
+
     <style>
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f2f2f2;
             margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 20px;
+            background: #000;
         }
 
         h1 {
-            margin-bottom: 20px;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 26px;
+            border-bottom: 2px solid #444;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
         iframe {
             width: 80%;
             height: 600px;
-            border: 1px solid #ccc;
             border-radius: 10px;
+            border: none;
         }
 
         .buttons {
             margin-top: 20px;
         }
 
-        a {
-            text-decoration: none;
-            margin: 10px;
-        }
-
         button {
             padding: 12px 25px;
-            font-size: 16px;
+            margin: 10px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            background-color: #111;
-            color: white;
+            font-size: 16px;
+            background: white;
+            color: black;
         }
 
             button:hover {
-                background-color: #333;
+                background: #ccc;
             }
+
+        .diplomas-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .diploma-card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+        }
+
+        video {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        footer {
+            padding: 20px;
+            background: #000;
+            margin-top: 40px;
+        }
     </style>
 </head>
+
 <body>
 
-    <h1>Mi Curriculum Vitae</h1>
+    <header>
+        <h1>Sebastian Lopez Garcia</h1>
+        <p>UX/UI | Desarrollo Web | Creación de Videojuegos</p>
+    </header>
 
-    <iframe src="SLG_CV.pdf"></iframe>
+    <!-- CV -->
+    <section>
+        <h2>Curriculum Vitae</h2>
 
-    <div class="buttons">
-        <a href="SLG_CV.pdf" target="_blank">
-            <button>Ver en pantalla completa</button>
-        </a>
+        <iframe src="SLG_CV.pdf"></iframe>
 
-        <a href="SLG_CV.pdf" download>
-            <button>Descargar CV</button>
-        </a>
-    </div>
+        <div class="buttons">
+            <a href="SLG_CV.pdf" target="_blank">
+                <button>Ver en pantalla completa</button>
+            </a>
+            <a href="SLG_CV.pdf" download>
+                <button>Descargar CV</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Diplomas -->
+    <section>
+        <h2>Diplomas</h2>
+
+        <div class="diplomas-container">
+
+            <div class="diploma-card">
+                <h3>UX/UI</h3>
+                <a href="diplomas/UXUI Certificado.pdf" target="_blank">
+                    <button>Ver Diploma</button>
+                </a>
+            </div>
+
+            <div class="diploma-card">
+                <h3>Creación de Videojuegos</h3>
+                <a href="diplomas/Game Design Certificado.pdf" target="_blank">
+                    <button>Ver Diploma</button>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Video Tesis -->
+    <section>
+        <h2>Proyecto de Tesis</h2>
+        <br />
+        <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/HKRS3xW486M" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+
+    </section>
+
+    <footer>
+        © 2026 Sebastian Lopez Garcia
+    </footer>
 
 </body>
 </html>
