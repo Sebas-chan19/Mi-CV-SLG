@@ -5,151 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sebastian Lopez Garcia | Portfolio</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
 
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f0f;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15,15,15,0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+            nav h3 {
+                font-weight: 600;
+            }
+
+            nav a {
+                color: #aaa;
+                text-decoration: none;
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+                nav a:hover {
+                    color: white;
+                }
+
+        /* HERO */
+        header {
+            padding: 100px 20px 60px;
             text-align: center;
         }
 
-        header {
-            padding: 40px 20px;
-            background: #000;
-        }
+            header h1 {
+                font-size: 40px;
+                font-weight: 700;
+            }
 
-        h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+            header p {
+                margin-top: 10px;
+                color: #aaa;
+            }
 
+        /* SECTIONS */
         section {
-            padding: 50px 20px;
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
         }
 
-        h2 {
-            margin-bottom: 30px;
-            font-size: 26px;
-            border-bottom: 2px solid #444;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+            section h2 {
+                font-size: 28px;
+                margin-bottom: 40px;
+                text-align: center;
+            }
 
-        iframe {
-            width: 80%;
+        /* CV */
+        .cv-container iframe {
+            width: 100%;
             height: 600px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
         .buttons {
+            text-align: center;
             margin-top: 20px;
         }
 
         button {
-            padding: 12px 25px;
+            padding: 12px 30px;
             margin: 10px;
+            border-radius: 30px;
             border: none;
-            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 16px;
             background: white;
             color: black;
+            transition: 0.3s ease;
         }
 
             button:hover {
-                background: #ccc;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(255,255,255,0.1);
             }
 
-        .diplomas-container {
-            display: flex;
-            justify-content: center;
+        /* Diplomas */
+        .diplomas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            flex-wrap: wrap;
         }
 
-        .diploma-card {
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            width: 250px;
+        .card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s ease;
+            border: 1px solid #222;
         }
 
-        video {
-            width: 80%;
-            border-radius: 10px;
+            .card:hover {
+                transform: translateY(-5px);
+                border: 1px solid #444;
+            }
+
+            .card h3 {
+                margin-bottom: 20px;
+            }
+
+        /* Video */
+        .video-container iframe {
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 0 40px rgba(0,0,0,0.6);
         }
 
+        /* Footer */
         footer {
-            padding: 20px;
-            background: #000;
-            margin-top: 40px;
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .cv-container iframe {
+                height: 400px;
+            }
+
+            .video-container iframe {
+                height: 250px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <nav>
+        <h3>Sebastian</h3>
+        <div>
+            <a href="#cv">CV</a>
+            <a href="#diplomas">Diplomas</a>
+            <a href="#tesis">Tesis</a>
+        </div>
+    </nav>
+
     <header>
         <h1>Sebastian Lopez Garcia</h1>
-        <p>UX/UI | Desarrollo Web | Creación de Videojuegos</p>
+        <p>UX/UI Designer • Web Developer • Game Creator</p>
     </header>
 
-    <!-- CV -->
-    <section>
+    <section id="cv">
         <h2>Curriculum Vitae</h2>
-        <br />
-        <iframe src="SLG_CV.pdf"></iframe>
+
+        <div class="cv-container">
+            <iframe src="SLG_CV.pdf"></iframe>
+        </div>
 
         <div class="buttons">
             <a href="SLG_CV.pdf" target="_blank">
-                <button>Ver en pantalla completa</button>
+                <button>Ver completo</button>
             </a>
             <a href="SLG_CV.pdf" download>
-                <button>Descargar CV</button>
+                <button>Descargar</button>
             </a>
         </div>
     </section>
 
-    <!-- Diplomas -->
-    <section>
+    <section id="diplomas">
         <h2>Diplomas</h2>
 
-        <div class="diplomas-container">
-
-            <div class="diploma-card">
-                <h3>UX/UI</h3>
+        <div class="diplomas">
+            <div class="card">
+                <h3>UX/UI Design</h3>
                 <a href="Diplomas/UXUI Certificado.pdf" target="_blank">
                     <button>Ver Diploma</button>
                 </a>
             </div>
 
-            <div class="diploma-card">
+            <div class="card">
                 <h3>Creación de Videojuegos</h3>
                 <a href="Diplomas/Game Design Certificado.pdf" target="_blank">
                     <button>Ver Diploma</button>
                 </a>
             </div>
-
         </div>
     </section>
 
-    <!-- Video Tesis -->
-    <section>
+    <section id="tesis">
         <h2>Proyecto de Tesis</h2>
         <br />
-        <iframe width="560" height="315" 
-                src="https://www.youtube.com/embed/HKRS3xW486M" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-        </iframe>
-
-    </section>
+        <div class="video-container">
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/HKRS3xW486M"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+            </iframe>
+</section>
 
     <footer>
         © 2026 Sebastian Lopez Garcia
